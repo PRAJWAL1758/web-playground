@@ -1,0 +1,83 @@
+/* =========================================================
+   CSS FUNDAMENTALS
+   Selectors, Specificity, Cascade, Inheritance, Box Model
+   ========================================================= */
+
+/* Universal selector */
+* {
+    box-sizing: border-box;
+}
+
+/* Type selector */
+body {
+    margin: 90px 90px;
+    padding: 50px 50px;
+    font-family: Arial, sans-serif;
+    background-color: #f2f4f7;
+    color: #333; /* inherited */
+}
+
+/* Class selector */
+.container {
+    width: 80%;
+    margin: 40px auto;        /* margin */
+    padding: 20px;            /* padding */
+    border: 3px solid #2c3e50;/* border */
+    background-color: #ffffff;
+}
+
+/* Descendant selector */
+.container p {
+    color: #555;
+}
+
+/* ID selector (high specificity) */
+#highlight {
+    color: #e74c3c;
+    font-weight: bold;
+}
+
+/* Attribute selector */
+input[type="text"] {
+    padding: 10px;
+    border: 2px solid #3498db;
+}
+
+/* Pseudo-class selector */
+button:hover {
+    background-color: #2ecc71;
+    cursor: pointer;
+}
+
+/* Cascade example (earlier rule) */
+.box {
+    background-color: #dfe6e9;
+}
+
+/* Cascade example (later rule overrides) */
+.box {
+    margin: 20px;              /* margin */
+    padding: 15px;             /* padding */
+    border: 4px solid #0984e3; /* border */
+    background-color: #b2bec3;
+    text-align: center;
+}
+
+/* Higher specificity selector */
+div.box {
+    border-color: #6c5ce7;
+}
+
+/* Inheritance example */
+.inherited {
+    color: #16a085;
+}
+
+/* Button base styling */
+button {
+    padding: 12px 20px;
+    border: none;
+    background-color: #27ae60;
+    color: white;
+    font-size: 14px;
+}

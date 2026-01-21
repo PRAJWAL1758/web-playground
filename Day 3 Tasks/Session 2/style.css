@@ -1,0 +1,110 @@
+/* Reset and base font */
+* {
+    box-sizing: border-box;
+    font-family: "Segoe UI", system-ui, sans-serif;
+}
+
+/* Center form on page */
+body {
+    margin: 0;
+    min-height: 100vh;
+    background: linear-gradient(120deg, #fdfbfb, #ebedee);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Outer wrapper */
+.container {
+    width: 100%;
+    padding: 40px;
+}
+
+/* Form card */
+.signup-form {
+    max-width: 1200px;
+    margin: auto;
+    padding: 40px;
+    background: #fff;
+    border: 1px solid #e0e0e0;
+}
+
+/* Form title */
+h2 {
+    margin-bottom: 30px;
+    border-bottom: 2px solid #000;
+    padding-bottom: 10px;
+}
+
+/* Two-column layout */
+.row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+    margin-top: 10px;
+}
+
+
+
+/* Label + input stack */
+.col {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Input labels */
+label {
+    font-size: 13px;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+}
+
+/* Form fields */
+input,
+select,
+textarea {
+    border: none;
+    border-bottom: 2px solid #ccc;
+    padding: 8px 4px;
+    outline: none;
+}
+
+/* Focus effect */
+input:focus,
+select:focus,
+textarea:focus {
+    border-bottom-color: #000;
+}
+
+/* Gender options */
+.gender {
+    display: flex;
+    gap: 20px;
+}
+
+/* Full width row */
+.full-width {
+    grid-column: 1 / -1;
+}
+
+/* Submit button */
+button {
+    margin-top: 30px;
+    padding: 12px;
+    background: #000;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+/* Hover effect */
+button:hover {
+    background: #0c7324;
+}
+
+/* Mobile layout */
+@media (max-width: 768px) {
+    .row {
+        grid-template-columns: 1fr;
+    }
+}
