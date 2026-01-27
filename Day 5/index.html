@@ -1,103 +1,233 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>World Clock</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>World Clock</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(90deg, #d8e8fd, #ffffff,#d8e8fd);
+    color: #0f172a;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+header h1 {
+    font-size: 2.6rem;
+    color: #1E3A8A;
+}
+
+header h3 {
+    margin: 80px 0;
+    font-weight: 500;
+    color: #2563EB;
+}
+
+header p {
+    color: #475569;
+}
+
+main {
+    max-width: 1100px;
+    margin: auto;
+}
+
+.welcome {
+    float: left;
+    color: #2563EB;
+}
+
+.row {
+    display: grid;
+    grid-template-columns: 60px 1.5fr 1.5fr 1fr 2fr;
+    gap: 10px;
+    padding: 22px 16px;
+    min-height: 80px;
+    align-items: center;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.12);
+    margin-bottom: 18px;
+}
+
+.row.header {
+    background: #C7DBFF;
+    font-weight: bold;
+    color: #1E3A8A;
+}
+
+.row:hover {
+    background: #EEF4FF;
+}
+
+.sr {
+    text-align: center;
+    font-weight: bold;
+    color: #1E3A8A;
+}
+
+.cityName {
+    margin-left: 10px;
+}
+
+.countryName {
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+.timeText {
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: #2563EB;
+}
+
+.dateText {
+    font-size: 0.95rem;
+    color: #475569;
+}
+
+@media (max-width: 768px) {
+    .row {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .row.header {
+        display: none;
+    }
+
+    .timeText,
+    .dateText {
+        width: 100%;
+    }
+}
+
+</style>
 </head>
 
 <body>
 
-    <header>
-        <h1>World Clock</h1>
-        <p>Live local time in cities around the world</p>
-    </header>
+<header>
+    <h1>World Clock 🌍 </h1>
+    <div class="welcome">🌍 Welcome to the World Clock</div><br>
+    <br>
+    <p>Live local time in cities around the world</p>
+</header>
 
-    <main>
+<main>
 
-        <table border="1" cellpadding="10" cellspacing="0">
+     <div class="row header">
+          <div>Sr</div>
+          <div>City</div>
+          <div>Country</div>
+          <div>Time</div>
+          <div>Date</div>
+     </div>
 
-            <thead>
-                <tr>
-                    <th>Sr</th>
-                    <th>Photo</th>
-                    <th>City</th>
-                    <th>Country</th>
-                    <th>Time</th>
-                    <th>Date</th>
-                </tr>
-            </thead>
+     <div class="row city" data-zone="Asia/Kolkata">
+          <div class="sr">1</div>
+          <div class="cityName">Pune</div>
+          <div class="countryName">India</div>
+          <div class="timeText"></div>
+          <div class="dateText"></div>
+     </div>
 
-            <tbody>
+     <div class="row city" data-zone="Asia/Singapore">
+          <div class="sr">2</div>
+          <div class="cityName">Singapore</div>
+          <div class="countryName">Singapore</div>
+          <div class="timeText"></div>
+          <div class="dateText"></div>
+     </div>
 
-                <tr class="city" data-zone="Asia/Kolkata">
-                    <td>1</td>
-                    <td><img alt="City image"></td>
-                    <td>Pune</td>
-                    <td>India</td>
-                    <td class="time"></td>
-                    <td class="date"></td>
-                </tr>
+     <div class="row city" data-zone="Asia/Manila">
+          <div class="sr">3</div>
+          <div class="cityName">Manila</div>
+          <div class="countryName">Philippines</div>
+          <div class="timeText"></div>
+          <div class="dateText"></div>
+     </div>
 
-                <tr class="city" data-zone="Asia/Singapore">
-                    <td>2</td>
-                    <td><img alt="City image"></td>
-                    <td>Singapore</td>
-                    <td>Singapore</td>
-                    <td class="time"></td>
-                    <td class="date"></td>
-                </tr>
+     <div class="row city" data-zone="America/Los_Angeles">
+          <div class="sr">4</div>
+          <div class="cityName">Los Angeles</div>
+          <div class="countryName">USA</div>
+          <div class="timeText"></div>
+          <div class="dateText"></div>
+     </div>
 
-                <tr class="city" data-zone="Asia/Manila">
-                    <td>3</td>
-                    <td><img alt="City image"></td>
-                    <td>Manila</td>
-                    <td>Philippines</td>
-                    <td class="time"></td>
-                    <td class="date"></td>
-                </tr>
+     <div class="row city" data-zone="America/Bogota">
+          <div class="sr">5</div>
+          <div class="cityName">Cali</div>
+          <div class="countryName">Colombia</div>
+          <div class="timeText"></div>
+          <div class="dateText"></div>
+     </div>
 
-                <tr class="city" data-zone="America/Los_Angeles">
-                    <td>4</td>
-                    <td><img alt="City image"></td>
-                    <td>Los Angeles</td>
-                    <td>USA</td>
-                    <td class="time"></td>
-                    <td class="date"></td>
-                </tr>
+     <div class="row city" data-zone="America/New_York">
+          <div class="sr">6</div>
+          <div class="cityName">Atlanta</div>
+          <div class="countryName">USA</div>
+          <div class="timeText"></div>
+          <div class="dateText"></div>
+     </div>
 
-                <tr class="city" data-zone="America/Bogota">
-                    <td>5</td>
-                    <td><img alt="City image"></td>
-                    <td>Cali</td>
-                    <td>Colombia</td>
-                    <td class="time"></td>
-                    <td class="date"></td>
-                </tr>
+     <div class="row city" data-zone="Europe/London">
+          <div class="sr">7</div>
+          <div class="cityName">London</div>
+          <div class="countryName">UK</div>
+          <div class="timeText"></div>
+          <div class="dateText"></div>
+     </div>
 
-                <tr class="city" data-zone="America/New_York">
-                    <td>6</td>
-                    <td><img alt="City image"></td>
-                    <td>Atlanta</td>
-                    <td>USA</td>
-                    <td class="time"></td>
-                    <td class="date"></td>
-                </tr>
+</main>
 
-                <tr class="city" data-zone="Europe/London">
-                    <td>7</td>
-                    <td><img alt="City image"></td>
-                    <td>London</td>
-                    <td>UK</td>
-                    <td class="time"></td>
-                    <td class="date"></td>
-                </tr>
+<script>
+function showTimes() {
+    var currentTime = new Date();
+    var allRows = document.getElementsByClassName("city");
 
-            </tbody>
+    for (var i = 0; i < allRows.length; i++) {
+        var zoneName = allRows[i].getAttribute("data-zone");
 
-        </table>
+        var localTime = currentTime.toLocaleTimeString("en-US", {
+            timeZone: zoneName,
+            hour: "2-digit",
+            minute: "2-digit",
+            second: "2-digit",
+            hour12: true
+        });
 
-    </main>
+        var localDate = currentTime.toLocaleDateString("en-US", {
+            timeZone: zoneName,
+            weekday: "long",
+            year: "numeric",
+            month: "long",
+            day: "numeric"
+        });
+
+        allRows[i].getElementsByClassName("timeText")[0].innerHTML = localTime;
+        allRows[i].getElementsByClassName("dateText")[0].innerHTML = localDate;
+    }
+
+}
+
+showTimes();
+setInterval(showTimes, 1000);
+</script>
 
 </body>
 </html>
